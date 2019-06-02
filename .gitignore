@@ -1,0 +1,9 @@
+.idea/
+/bin
+/META-INF
+.classpath
+.floo
+.flooignore
+.project
+Class Diagram.uml
+hardcode.uml
