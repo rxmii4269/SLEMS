@@ -8,7 +8,7 @@ import java.sql.SQLException;
 public class DBConnect {
 	private String host = "jdbc:mariadb://localhost:3306/SLEMS";
 	private String username = "root";
-	private String password = "romaine";
+	private String password = "romyroms";
 
 
 	public void writeToDBCust(String customerName, int phoneNumber, String deliveryAddress, String email,
