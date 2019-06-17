@@ -7,6 +7,9 @@ class DBConnect {
     private val host = "jdbc:mariadb://localhost:3306/SLEMS"
     private val username = "root"
     private val password = "romyroms"
+    private val pHost = "jdbc:postgresql://localhost:5432/slems"
+    private val pPassword = "romyroms"
+    private val userName = "postgres"
 
 
     fun writeToDBCust(customerName: String, phoneNumber: Int, deliveryAddress: String, email: String,
@@ -22,8 +25,11 @@ class DBConnect {
             pst.setString(5, email)
             pst.setString(6, quantity.toString())
             pst.setString(7, cost.toString())
+            val conn = DriverManager.getConnection(pHost, userName, pPassword)
+            val pstt = conn.prepareStatement("INSERT INTO customerdata VALUES (?,?,?,?," + "?,?,?)")
 
             pst.executeUpdate()
+            pstt.executeUpdate()
         } catch (e: SQLException) {
             println(e.message)
         }
@@ -35,6 +41,8 @@ class DBConnect {
         try {
             val con = DriverManager.getConnection(host, username, password)
             val pst = con.prepareStatement("insert into Users values (?,?,?,?,?,?)")
+            val conn = DriverManager.getConnection(pHost, userName, pPassword)
+            val pstt = conn.prepareStatement("INSERT INTO users values (?,?,?,?,?,?)")
             pst.setString(1, employeeID)
             pst.setString(2, firstName)
             pst.setString(3, lastName)
@@ -43,6 +51,7 @@ class DBConnect {
             pst.setString(6, Position)
 
             pst.executeUpdate()
+            pstt.executeUpdate()
         } catch (e: SQLException) {
             println(e.message)
         }
@@ -54,6 +63,8 @@ class DBConnect {
         try {
             val conn = DriverManager.getConnection(host, username, password)
             val pst = conn.prepareStatement("insert into DailyCollectedEggs values(?,?,?,?,?,?)")
+            val con = DriverManager.getConnection(pHost, userName, pPassword)
+            val pstt = con.prepareStatement("insert into DailyCollectedEggs values(?,?,?,?,?,?)")
             pst.setString(1, employeeID)
             pst.setString(2, collectedEggs)
             pst.setString(3, spoiledEggs)
@@ -62,6 +73,7 @@ class DBConnect {
             pst.setString(6, workStationNumber)
 
             pst.executeUpdate()
+            pstt.executeUpdate()
         } catch (e: SQLException) {
             println(e.message)
         }
@@ -73,6 +85,8 @@ class DBConnect {
                              amountOfEggs: String) {
         try {
             val conn = DriverManager.getConnection(host, username, password)
+            val con = DriverManager.getConnection(pHost, userName, pPassword)
+            val pstt = con.prepareStatement("insert into EggSupplier values (?,?,?,?,?,?)")
             val pst = conn.prepareStatement("insert into EggSupplier values (?,?,?,?,?,?)")
             pst.setString(1, null)
             pst.setString(2, companyName)
@@ -82,6 +96,7 @@ class DBConnect {
             pst.setString(6, amountOfEggs)
 
             pst.executeUpdate()
+            pstt.executeUpdate()
         } catch (e: SQLException) {
             println(e.message)
         }
