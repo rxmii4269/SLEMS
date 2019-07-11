@@ -170,7 +170,7 @@ class HomeUI {
                 }
 
             }
-            JOptionPane.showMessageDialog(frame, "report Successfully Created", "SLEMS",
+            JOptionPane.showMessageDialog(frame, "Report Successfully Created", "SLEMS",
                     JOptionPane.INFORMATION_MESSAGE, ImageIcon(HomeUI::class.java.getResource("/resources/check-mark.png")))
 
 

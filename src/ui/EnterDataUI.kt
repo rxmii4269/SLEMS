@@ -159,7 +159,7 @@ internal constructor() {
         btnGoHome.setBounds(22, 434, 147, 28)
         frame!!.contentPane.add(btnGoHome)
 
-        val btnSaveData = JButton("Save data")
+        val btnSaveData = JButton("Save Data")
         btnSaveData.foreground = Color.WHITE
         btnSaveData.background = Color(25, 25, 112)
         btnSaveData.setBounds(191, 434, 147, 28)
@@ -195,7 +195,7 @@ internal constructor() {
                         JOptionPane.ERROR_MESSAGE)
             } else {
 
-                JOptionPane.showMessageDialog(frame, "data saved", "SLEMS",
+                JOptionPane.showMessageDialog(frame, "Data Saved", "SLEMS",
                         JOptionPane.INFORMATION_MESSAGE, ImageIcon(javaClass.getResource("/resources/check-mark.png")))
             }
         }

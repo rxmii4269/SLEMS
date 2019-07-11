@@ -18,23 +18,31 @@ constructor() {
     private val writeTable = FileWriter("src/resources/report.txt", StandardCharsets.UTF_8)
     private val bw = BufferedWriter(writeTable)
     private val out = PrintWriter(bw)
-    private val supplier = BufferedReader(FileReader("Supplier Info.txt"))
-    private val customer = BufferedReader(FileReader("Customer Info.txt"))
-    private val product = BufferedReader(FileReader("Product.txt"))
+    private val supplier = BufferedReader(FileReader("src/resources/Supplier Info.txt"))
+    private val customer = BufferedReader(FileReader("src/resources/Customer Info.txt"))
+    private val product = BufferedReader(FileReader("src/resources/Product.txt"))
 
     @Throws(IOException::class)
     fun generateReport() {
         out.println("Created by " + "Supervisor ")
         out.println("Compiled on: " + date.format(now) + "\n\n")
-        val sup = supplier.readLine()
-        val cust = customer.readLine()
-        val prod = product.readLine()
-        sup.lineSequence().forEach { out.println(it) }
+        val sup = supplier.readLines()
+        val cust = customer.readLines()
+        val prod = product.readLines()
 
+        sup.forEach { out.println(it) }
         out.println("\n")
-        cust.lineSequence().forEach { out.println(it) }
+        cust.forEach { out.println(it) }
         out.println("\n")
-        prod.lineSequence().forEach { out.println(it) }
+        prod.forEach { out.print(it + "\n") }
+        out.println("\n")
+
+        /*out.println(sup)
+
+
+        out.println(cust)
+        out.println("\n")
+        out.println(prod)*/
 
         out.flush()
         out.close()

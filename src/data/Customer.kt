@@ -11,7 +11,7 @@ class Customer @Throws(IOException::class)
 constructor(private val customerName: String, private val phoneNum: String, private val deliveryAddress: String, private val emailAddress: String, private val amt: Int) {
 
     var customerArray = ArrayList<String>()
-    private val writeTable = FileWriter("Customer Info.txt", StandardCharsets.UTF_8, true)
+    private val writeTable = FileWriter("src/resources/Customer Info.txt", StandardCharsets.UTF_8, true)
     private val bw = BufferedWriter(writeTable)
     private val out = PrintWriter(bw)
 

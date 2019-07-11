@@ -5,6 +5,7 @@ import java.awt.Color
 import java.awt.Font
 import java.awt.SystemColor
 import javax.swing.*
+import kotlin.system.exitProcess
 
 class LoginUserUI {
 
@@ -68,7 +69,7 @@ class LoginUserUI {
         usernameField!!.columns = 10
 
 
-        val lblPassword = JLabel("passWord ")
+        val lblPassword = JLabel("Password ")
         lblPassword.font = Font("Arial", Font.PLAIN, 18)
         lblPassword.setBounds(127, 249, 108, 14)
         frame!!.contentPane.add(lblPassword)
@@ -133,7 +134,7 @@ class LoginUserUI {
                             JOptionPane.YES_NO_OPTION) == JOptionPane.YES_NO_OPTION)) {
                 getUsername()!!.text = null
                 password!!.text = null
-                System.exit(0)
+                exitProcess(0)
             } else {
                 getUsername()!!.grabFocus()
             }

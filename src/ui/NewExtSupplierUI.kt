@@ -191,7 +191,7 @@ constructor() {
             val connect = DBConnect()
             connect.writeToDBEggSupplier(details[0], details[1], details[2], details[3],
                     details[4])
-            JOptionPane.showMessageDialog(frame, "Supplier added", "SLEMS",
+            JOptionPane.showMessageDialog(frame, "Supplier Added", "SLEMS",
                     JOptionPane.INFORMATION_MESSAGE, ImageIcon(javaClass.getResource("/resources/check-mark.png")))
 
 
