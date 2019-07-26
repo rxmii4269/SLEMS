@@ -5,11 +5,11 @@ import java.sql.SQLException
 
 class DBConnect {
     private val host = "jdbc:mysql://localhost:3306/SLEMS"
-    private val username = "root"
+    private val username = "admin"
     private val password = "romyroms"
 
 
-    fun writeToDBCust(customerName: String, phoneNumber: Int, deliveryAddress: String, email: String,
+    fun writeToDBCust(customerName: String, phoneNumber: Long, deliveryAddress: String, email: String,
                       quantity: Int, cost: Int) {
 
         try {

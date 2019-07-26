@@ -103,7 +103,7 @@ class NewOrderUI {
             customer?.customerInfo()
             lblNewLabel2.text = "$" + order.total()
             val write = DBConnect()
-            write.writeToDBCust(custName!!, Integer.parseInt(phoneNum!!), address!!, email!!, amt, order.total().toInt())
+            write.writeToDBCust(custName!!, phoneNum!!.toLong(), address!!, email!!, amt, order.total().toInt())
         }
 
 
